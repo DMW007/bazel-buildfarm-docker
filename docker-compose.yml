@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  server:
+    build:
+      context: .
+    volumes:
+      - ./config:/config
+    ports:
+      - 8980:8980
+
+  worker:
+    entrypoint: "/app/buildfarm-operationqueue-worker /config/worker.config"
+    build:
+      context: .
+    volumes:
+      - ./config:/config
+    depends_on:
+      - server

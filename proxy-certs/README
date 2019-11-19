@@ -1,0 +1,1 @@
+Place the root certificate of your proxy here with `.crt` extension. Only required when you're behind a proxy.
