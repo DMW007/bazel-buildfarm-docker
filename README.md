@@ -2,6 +2,16 @@
 
 Run [bazel-buildfarm](https://github.com/bazelbuild/bazel-buildfarm) master and worker nodes on Docker (Compose). Supports MITM-proxys for corporate usage.
 
+## Get started
+
+The default `docker-compose.yml` file creates one master server with one worker. It uses [example configurations from bazel-buildfarm](https://github.com/bazelbuild/bazel-buildfarm/tree/master/examples) with adjusted hostnames. You can find and modify them in the `config` directory. If proxy support is required or you need a different Bazel version, see the build paramters above.
+
+To build and start the containers, just run
+
+```bash
+docker-compose up --build
+```
+
 ## Build arguments
 
 | Name                     | Default                                                    | Description                                                                                                                     |
